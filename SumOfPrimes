@@ -7,13 +7,32 @@ namespace CodeEval
 	{
 		public static void Main(string[] args)
 		{
-			int prime = 0;
-			for (int i = 2; i < 1000; i++) {
-				if (isPrime(i) == true){
-				prime = prime + i;
-				}
-			}
-			Console.Writeline(prime);
+		int countOfPrimes = 0, index = 2, sumOfPrimes = 0;
+ 
+        		while (countOfPrimes != 1000)
+        		{
+            			if(IsPrime(index))
+        			{
+                		countOfPrimes++;
+                		sumOfPrimes += index;
+            			}
+ 
+            			index++;
+        		}
+ 
+        	Console.WriteLine(sumOfPrimes);
+    		}
+
+		
+			//Only uses the first 168 prime numbers (2-1000) however it calls for the first 1000 prime numbers
+			//*** NOt the right answer  *** Doesn't count high enough look at code above to for answer
+			//int prime = 0;
+			//for (int i = 2; i < 1000; i++) {
+				//if (isPrime(i) == true){
+				//prime = prime + i;
+				//}
+			//}
+			//Console.Writeline(prime);
 			
 			// TODO: Implement Functionality Here
 			
