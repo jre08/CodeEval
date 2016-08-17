@@ -10,7 +10,7 @@ namespace CodeEval
 	   {
 			int prime = 0;
 			for (int i = 2; i < 1000; i++) {
-				if (isPrime(i) == true){
+				if (isPrime(i) && isPalinedrone(String.parse(i)){
 				prime = prime + i;
 				}
 			}
@@ -21,7 +21,40 @@ namespace CodeEval
 			//Console.Write("Press any key to continue . . . ");
 			//Console.ReadKey(true);
 		}
-		
+	public static bool isPrime(int number)
+{
+    int boundary = (int)Math.Floor(Math.Sqrt(number));
+
+    if (number == 1) return false;
+    if (number == 2) return true;
+
+    for (int i = 2; i <= boundary; ++i)  {
+        if (number % i == 0)  return false;
+    }
+
+    return true;        
+}
+
+	public static bool IsPalindrome(string value)
+    {
+	int min = 0;
+	int max = value.Length - 1;
+	while (true)
+	{
+	    if (min > max)
+	    {
+		return true;
+	    }
+	    char a = value[min];
+	    char b = value[max];
+	    if (char.ToLower(a) != char.ToLower(b))
+	    {
+		return false;
+	    }
+	    min++;
+	    max--;
+	}
+    }
 
 	}
 }
