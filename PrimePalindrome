@@ -1,5 +1,13 @@
-
+/*
+ * Created by SharpDevelop.
+ * User: edenfield-john
+ * Date: 8/15/2016
+ * Time: 2:13 PM
+ * 
+ * To change this template use Tools | Options | Coding | Edit Standard Headers.
+ */
 using System;
+using System.IO;
 
 
 namespace CodeEval
@@ -7,54 +15,86 @@ namespace CodeEval
 	class Program
 	{
 		public static void Main(string[] args)
-	   {
+		{
+			
+			string mydocpath =
+    Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+
+//			int countOfPrimes = 0, index = 2, sumOfPrimes = 0;
+// 
+//        while (countOfPrimes != 1000)
+//        {
+//            if(IsPrime(index))
+//            {
+//                countOfPrimes++;
+//                sumOfPrimes += index;
+//                using (StreamWriter outputFile = new StreamWriter(mydocpath + @"\WriteLines.txt",true)) {
+//                	outputFile.WriteLine(sumOfPrimes);
+//                }
+//            }
+// 
+//            index++;
+//        }
+// 
+//        Console.WriteLine(sumOfPrimes);
+//        Console.ReadKey();
+    
+
 			int prime = 0;
-			for (int i = 2; i < 1000; i++) {
-				if (isPrime(i) && isPalinedrone(String.parse(i)){
-				prime = prime + i;
+			for (int i = 2; i <= 1000; i++) 
+			{
+				if (IsPrime(i) && IsPalindrome(string.Format("{0}",i))){
+				prime = i;
+				//using (StreamWriter outputFile = new StreamWriter(mydocpath + @"\WriteLines2.txt",true)) {
+				//	outputFile.WriteLine(i);
+				//}
 				}
 			}
-			Console.Writeline(prime);
+			Console.WriteLine(prime);
+			Console.ReadKey();
+			
 			
 			// TODO: Implement Functionality Here
 			
 			//Console.Write("Press any key to continue . . . ");
 			//Console.ReadKey(true);
 		}
-	public static bool isPrime(int number)
-{
-    int boundary = (int)Math.Floor(Math.Sqrt(number));
+		
+		public static bool IsPrime(int number)
+		{
+			int boundary = (int)Math.Floor(Math.Sqrt(number));
 
-    if (number == 1) return false;
-    if (number == 2) return true;
+			if (number == 1) return false;
+			if (number == 2) return true;
 
-    for (int i = 2; i <= boundary; ++i)  {
-        if (number % i == 0)  return false;
-    }
+			for (int i = 2; i <= boundary; ++i)  {
+				if (number % i == 0)  return false;
+			}
 
-    return true;        
-}
-
-	public static bool IsPalindrome(string value)
-    {
-	int min = 0;
-	int max = value.Length - 1;
-	while (true)
-	{
-	    if (min > max)
-	    {
-		return true;
-	    }
-	    char a = value[min];
-	    char b = value[max];
-	    if (char.ToLower(a) != char.ToLower(b))
-	    {
-		return false;
-	    }
-	    min++;
-	    max--;
-	}
-    }
+			return true;
+			
+		}
+		
+		public static bool IsPalindrome(string value)
+		{
+			int min = 0;
+			int max = value.Length - 1;
+			while (true)
+			{
+				if (min > max)
+				{
+					return true;
+				}
+				char a = value[min];
+				char b = value[max];
+				if (char.ToLower(a) != char.ToLower(b))
+				{
+					return false;
+				}
+				min++;
+				max--;
+			}
+		}
 
 	}
 }
