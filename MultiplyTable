@@ -1,0 +1,57 @@
+using System;
+
+namespace CodeEval
+{
+	/// <summary>
+	/// Description of MultiplyTable.
+	/// </summary>
+	public class MultiplyTable
+	{
+		public static void mTable()
+		{
+			int row = 1, total = 0;
+			string mTable = "", sTotal="";
+			string[][] aTable = new string[13][];
+			
+			
+			while (row != 14)
+			{
+				for (int i=1; i <= 12; i++)
+				{
+					total = i * row;
+				sTotal=String.Format("{0,4}",total);
+//					int varLen = sTotal.Length;
+//					if (varLen > 1)
+//					{
+//						 sTotal=String.Format("{0,-4}",total);
+//					}
+//					else
+//					{
+//						sTotal=String.Format("{0,4}",total);
+//			
+//				}
+				mTable += sTotal;
+					aTable[row-1] = new string[] {mTable};
+					aTable[row - 1][0] = mTable;					
+				}
+				
+			mTable = "";
+			row++;
+			}
+			
+			for (int i = 0; i <= aTable.Length -1; ++i)
+			{
+				
+					
+				
+			
+				Console.WriteLine(aTable[i][0].Trim());
+				
+			//System.Diagnostics.Debug.Print(line.TrimEnd());
+			}
+Console.ReadKey();
+			
+			
+		}
+	}
+}
