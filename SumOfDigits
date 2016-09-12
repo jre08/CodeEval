@@ -1,0 +1,65 @@
+sing System;
+using System.Collections.Generic;
+using System.Linq;
+
+
+namespace CodeEval
+{
+	/// <summary>
+	/// Description of SumofDigits.
+	/// </summary>
+	public class SumofDigits
+	{
+		
+		public int num1 {get; set;}
+		public int num2 { get; set; }
+		public int x { get; set; }
+		
+		
+		public SumofDigits()
+		{
+			num1 = 23;
+			num2 = 496;
+			
+			int num1Lgth = num1.ToString().Length;
+			int num2Lgth = num2.ToString().Length;
+			
+			for (int i = 0; i < num2Lgth; i++) {
+				//Console.WriteLine(num1.ToString().Substring(i,1));
+				x += Convert.ToInt32(num2.ToString().Substring(i,1));
+			}
+			Console.WriteLine(x);
+			
+			
+//				//int[] digits = num1.ToString().ToCharArray().Select(Convert.ToInt32).ToArray();
+//				int[] digits = num2.ToString()
+//
+//			foreach (var digit in digits) {
+//					//Console.WriteLine(string.Format("{0}",x));
+//					x = Convert.ToInt32(digit) + x;
+//				//Console.WriteLine(string.Format("{0}",digit));											
+//			}
+//				
+//				Console.WriteLine(string.Format("{0}",x));
+//				
+			
+			
+		}
+		
+		public static int[] transformation(int x)
+        {
+            string s,numbers = x.ToString();
+            char[] num = numbers.ToCharArray();
+            int L=num.Length;
+            int[] x1 = new int[L];
+            for (int i = 0; i <L; i++)
+            {
+                s = num[i].ToString();
+                x1[i] = Convert.ToInt32(s);
+            }
+            
+            return x1;
+        }
+}
+	}
+
