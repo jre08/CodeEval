@@ -1,0 +1,21 @@
+using System;
+
+namespace CodeEval
+{
+	/// <summary>
+	/// Description of Distance.
+	/// </summary>
+	public class Distance
+	{
+		// Takes two sets of points and calculates the distance between them
+// on a Cartesian coordinate system. 
+
+	public static double distanceFormula(int x1, int y1, int x2, int y2) {
+     double xPoints = Math.Pow((x2 - x1), 2.0);
+     double yPoints = Math.Pow((y2 - y1), 2.0);
+
+     return Math.Sqrt(xPoints + yPoints);
+}
+
+	}
+}
