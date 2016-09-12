@@ -1,0 +1,22 @@
+using System;
+
+namespace CodeEval
+{
+	/// <summary>
+	/// Description of OddNumbers.
+	/// </summary>
+	public class OddNumbers
+	{
+		
+		public static string printOddNumbers()
+		{
+			string OddNum ="";
+			for (int i = 1; i <= 99;)
+			{
+				OddNum += String.Format("{0}\n", i);
+				i = i +2;
+			}
+			return OddNum;
+		}
+	}
+}
