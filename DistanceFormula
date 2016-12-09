@@ -17,5 +17,9 @@ namespace CodeEval
      return Math.Sqrt(xPoints + yPoints);
 }
 
+//Calculates angle between the two points(X,Y)
+           // double radians = Math.Atan2(pointY2, pointX2);
+           // double angle = radians * (180 / Math.PI);
+
 	}
 }
